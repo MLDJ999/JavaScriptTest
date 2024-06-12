@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 테스트</title>
+</head>
+<body>
+    <script>
+    var i;
+    var i2;
+    var sum = 0;
+    var sum2 = 0;
+
+    // 1~1000까지 홀수만 더한 값 계산 하는 법
+    for(i=1; i <= 1000; i++) {
+        if(i % 2 == 0) {
+            continue;
+            console.log(sum);
+        }else {
+            sum += i;
+            console.log(sum);
+        }
+    }
+
+    document.write("1부터 1000까지 홀수만 더한값은 : " + sum + "<br>");
+
+    // 1~1000까지 짝수만 더한 값 계산하는 법
+    for(i2=1; i2 <= 1000; i2++) {
+        if(i2 % 2 == 0) {
+            sum2 += i2;
+        }else {
+            continue;
+        }
+    }
+
+    document.write("1부터 1000까지 짝수만 더한값은 : " + sum2 + "<hr>");
+
+    // 사용자가 입력한 값에 따라 덧셈결과 구하기
+    var i3;
+    var sum3 = 0;
+    var resultType = prompt("더하려고 하는 숫자 타입을 정하시오(1 - 모든숫자, 2 - 짝수만, 3 - 홀수만)");
+    var want = prompt("어디까지 더할까요?");
+
+    switch(resultType) {
+        case "1": 
+            for(i3 = 1; i3 <= want; i3++) {
+                sum3 += i3;
+            }
+            document.write("모두 더했을 때 나온 결과 : " + sum3);
+            break;
+
+        case "2": 
+            for(i3 = 1; i3 <= want; i3++) {
+                if(i3 % 2 == 0) {
+                    sum3 += i3;
+                }
+            }
+            document.write("짝수만 더했을 때 나온 결과 : " + sum3);
+            break;
+
+        case "3": 
+            for(i3 = 1; i3 <= want; i3++) {
+                if(i3 % 2 !== 0) {
+                    sum3 += i3;
+                }
+            }
+            document.write("홀수만 더했을 때 나온 결과 : " + sum3);
+            break;
+
+        default:
+            alert("잘못입력하셨습니다.");
+    }
+    </script>
+</body>
+</html>
